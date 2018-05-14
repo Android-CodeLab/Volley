@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: in.jamun:pickers-0.0.1-beta">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pickers-0.0.1-beta.aar/48f044daa1475804e8ffc8462c7221d3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pickers-0.0.1-beta.aar/48f044daa1475804e8ffc8462c7221d3/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/in/jamun/pickers/0.0.1-beta/pickers-0.0.1-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/in/jamun/pickers/0.0.1-beta/pickers-0.0.1-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
