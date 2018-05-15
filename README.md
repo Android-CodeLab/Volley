@@ -37,7 +37,7 @@ These instructions will get you a copy of the project up and running on your loc
 # Dependency
 
 * Android Volley ``v1.1.0``
-* Jamun Volley Library **[Volley](https://github.com/Lib-Jamun/Volley.git)**
+* Java jar ``org.apache.http.legacy.jar``
 
 ## Credits
 
