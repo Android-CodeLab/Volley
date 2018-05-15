@@ -34,6 +34,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 # How to Implement
 
+# Dependency
+
+* Android Volley ``v1.1.0``
+* Jamun Volley Library **[Volley](https://github.com/Lib-Jamun/Volley.git)**
 
 ## Credits
 
@@ -43,30 +47,43 @@ Content Writer : **[Achal Garg](http://achal.techcruzers.com)**
 
 Company : **[Techcruzers](http://www.techcruzers.com)**
 
+# Live Project using this Library
+
+The following apps are using this library without facing any kind of Bugs.
+
+* **[SimplyBlood](https://play.google.com/store/apps/details?id=com.simplyblood)**
+* **[ZINI](https://play.google.com/store/apps/details?id=ai.zini)**
+* **[LifeMantra](https://play.google.com/store/apps/details?id=com.lifemantra)**
+* **[Wall-E](https://play.google.com/store/apps/details?id=ai.hd.wallpaper)**
+* **[Jumboo](https://play.google.com/store/apps/details?id=com.doubtzone)**
+* **[SaveBloodIndia](https://play.google.com/store/apps/details?id=com.savebloodindia)**
+* **[Rectangle India](https://play.google.com/store/apps/details?id=com.rectangleindia.blooddonation)**
+* **[Jeevan Rakshak](https://play.google.com/store/apps/details?id=com.jeevanrakshak)**
+
 ## More Library under Jamun 
 * **[Pickers](https://github.com/Lib-Jamun/Pickers.git)**
 Pickers Library provide you a set of Pickers like Country, Language, Share and Intent Chooser.
 
 * **[Country-Pickers](https://github.com/Lib-Jamun/Pickers.git)**
-Country Pickers provide you Country picking functionality with great UI|UX, and there custom calling features to make there picker developer handy. This have four custom ways to make there picker UI with Single and Multi Selection functionality. It have updated collection of country name, code and there flags for better understanding and UI.
+allow you to access Country picking functionality with great UI/UX design, and there are numberous of function which help you to modify picker as per your requirements. Library has been provided with four custom UI initate mode you can decide how the view of picker can be initate. You can also decide weather picker inheriate Single or Multi Selection property. Library consists of updated collection of country name, code and there flags. We are using APIs base structure to avoid increase in the size of apk due to flag Images. This module Maintain the database so that you don't need to call APIs again and again rather than you can choose when to refresh the Database and fetch new real time data.
 
 * **[Language-Pickers](https://github.com/Lib-Jamun/Pickers.git)**
-Language Picker provide you Language picking functionality with great UI|UX, and there custom calling features to make there picker developer handy. This have four custom ways to make there picker UI with Single and Multi Selection functionality. User have option to customize there data at your own by simple calls.
+provides you read-made Language picker  which is easy to use and comes with great UI/UX, and there are numberous of function which help you to modify picker as per your requirements. Library has been provided with four custom UI initate mode you can decide how the view of picker can be initate. You can also decide weather picker inheriate Single or Multi Selection property.
 
 * **[Scanner](https://github.com/Lib-Jamun/scanner.git)**
-Scanner is a collection of Beautiful Activity which help others to make there own Custom QR/Barcode Scanner. 
+is a collection of Beautiful Activity which help others to make there own Custom QR/Barcode Scanner. 
 
 * **[Calendar](https://github.com/Lib-Jamun/calendar.git)**
-Calendar is a collection of Beautiful Activities which help others to make there Fully Custom Calendar View with Single and Multi Date Picker Functionality 
+is a collection of Beautiful Activities which help others to make there Fully Custom Calendar View with Single and Multi Date Picker Functionality 
 
 * **[UI](https://github.com/Lib-Jamun/ui.git)**
-UI library is a set of UI Views, Custom Component and Collection of Helper Classes which help Developer for making quality Product. Such as Camera, Gallery, Number of Pickers, Calendar, Date Pickers, Dialogs and many more Heler UI and Backend Component.
+library is a set of UI Views, Custom Component and Collection of Helper Classes which help Developer for making quality Product. Such as Camera, Gallery, Number of Pickers, Calendar, Date Pickers, Dialogs and many more Heler UI and Backend Component.
 
 * **[Camera](https://github.com/Lib-Jamun/ui.git)**
-Camera library provide you Custom Complete Camera view with full features like Flash, Rotation, Gallery Picker, Focus, Tap to capture, Confirmation window and last but not least croping feature. It also provide you file path in return so that developer can feel a friendly handy way to Deal After. 
+library provide you Custom Complete Camera view with full features like Flash, Rotation, Gallery Picker, Focus, Tap to capture, Confirmation window and last but not least croping feature. It also provide you file path in return so that developer can feel a friendly handy way to Deal After. 
 
 * **[Gallery](https://github.com/Lib-Jamun/ui.git)**
-Gallery have some Beautiful UI Components and Multi files Mode for android Developers to give there app a A Rich look With single and Multi picker Functionality.
+have some Beautiful UI Components and Multi files Mode for android Developers to give there app a A Rich look With single and Multi picker Functionality.
 
 
 ## License
