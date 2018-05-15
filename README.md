@@ -2,9 +2,7 @@
 
 A set of Custom Classes with UI components for network programming, integration and transaction handling in a better and standard way. This will help developers for making quality use of volley library.
 
-------
-
-## Introduction
+### Introduction
 
 * In this Library Jamun-Volley, we provide you a package of custom Volley Classes which ease your work while working with API calls.
 * You just need to setup all the configuration stuff (Like Header Meta-Data, Singleton Declarations this will be shown with example later in the documnet) at one place so that you don't have to write same piece of code again and again. For example, MyApplication Class.<br>
@@ -13,12 +11,8 @@ A set of Custom Classes with UI components for network programming, integration 
 * THis Library also provide you File Downloading and Uploading classes which were upsent in Traditional Volley. With the help of this Library you can also manage of your file Downloading/Uploading progress easliy with Data Statistics.<br>
 * Library's most attractives UI Feature is that you are provided with CircularNetworkImageView with the help of which you can display your image in Attractive Circullar View. By Just using CircularNetworkImageView.
 * Library also provide you a UI Component to Show progress Data Statistics in Notification. But this also provide you a set of Function which help in Customization.<br>
-  
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-## What's New? (0.0.1)
+### What's New? (0.0.1)
 * Stable **Official Version** for Developers and Live Apps.
 * Custom UI components for **Progress Notifications** with Infinite and Counted progress bar. Also have data analytics.
 * Easy Calling Mechanism with **Instant reply** via Listeners and Return Functions
@@ -27,6 +21,10 @@ These instructions will get you a copy of the project up and running on your loc
 * Already tested with Live apps
 
 ------
+
+# Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Features and Functionalities
 
