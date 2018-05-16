@@ -44,10 +44,6 @@ These instructions will get you a copy of the project up and running on your loc
 Desgin & Developed by : **[Jatin Sahgal](https://www.linkedin.com/in/jatinsahgal/)**
  (**[Linkedin](https://www.linkedin.com/in/jatinsahgal/)** & **[Website](https://jatin.techcruzers.com)**) 
 
-Content Writer : **[Achal Garg](http://achal.techcruzers.com)**
-
-Company : **[Techcruzers](http://www.techcruzers.com)**
-
 # Live Project using this Library
 
 The following apps are using this library without facing any kind of Bugs.
