@@ -22,21 +22,233 @@ A set of Custom Classes with UI components for network programming, integration 
 
 ------
 
+### Features and Functionalities
 
+As you all familiar with Basic calls Required in Accessing JSON Data of Type,
 
-# Getting Started
+* **JSONObject Request**
+* **JSONArray Request**
+* **String Request**
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+But this Library Provide you :
 
-## Features and Functionalities
+* **Network Response Request**
+* **Response Request with Response in String and Network**
 
-*
+**Uploading**
+
+* **Multipart Request for Payload**
+* **HTTPConnection Request for Payload with Notifcaion**
+
+**Downloading**
+
+* **File Download Request for Payload**
+* **Image Download Request for Image**
+* **HTTPConnection Request for Payload with Notifcaion**
+
+Also for used in Background Services like Services, IntentServices, AsynTasks
+
+**Background Service Tasks** 
+
+* **For Payload with Notifcaion**
+* **For JSONObject**
+* **For JSONArray**
+* **For String**
+
+Last but not Lease :
+**Error Response**
+
+* **With Status Code**
+* **With Predefined Status Replies**
 
 ------
 
 # How to Implement
 
 Once the project has been added to gradle, You can use these lines of code to configure pickers...
+
+## Step 1. Volley Setup
+
+Library provide you a Better Approach and Efficent way to setup Google Volley Library, now you don't need to create Volely singleton or create a Setup of LRU Cache for File buffering or caching or many more things developer need to set first to start volley.
+And last but not least, no need of creating header again and again for each APIs calls, this will done automatically with one function call define in  **Application** class for Global Access.
+
+But here, these things are automate by calling some methods in **Application** class
+
+```
+ @Override
+ public void onCreate() {
+        super.onCreate();
+        VolleySingleton.setInstance(mInstance);
+        setAndRefreshVolleyHeaderCredentials();
+ }
+ // this function call required to setup or refresh your Header AuTH details from one place for whole further api calls.
+ public void setAndRefreshVolleyHeaderCredentials() {
+        VolleyNeeds.getInstance().setUpHeaders(ClassSharedPreference.getInstance().getHeaderCredentials());
+ }
+ 
+ //If you want to setup LRU cache Size
+ VolleySingleton.setLruCacheSize(int lruCacher);
+ 
+```
+
+Method define in Sharepreference class for accessing AUth header Details.
+Example after login or registeration, setup your auth Fundamental in SharedPrefrence and push refresh to set for Global Use 
+
+```
+public ArrayList<ModelHeader> getHeaderCredentials() {
+    ArrayList<ModelHeader> headerArrayList = new ArrayList<>();
+    headerArrayList.add(new ModelHeader(KEY_USER_ID, sharedPreferences.getString(KEY_USER_ID, null)));
+    headerArrayList.add(new ModelHeader(KEY_TOKEN, sharedPreferences.getString(KEY_TOKEN, null)));
+    headerArrayList.add(new ModelHeader(TAG,DATA));
+    headerArrayList.add(new ModelHeader(TAG,DATA));
+    headerArrayList.add(new ModelHeader(TAG,DATA));
+    return headerArrayList;
+}
+```
+Thats it. Your all setup is now Done in Two lines.
+
+## Step 1. APIs integration with Jamun-Volley
+
+As you all familiar with Basic calls Required in Accessing JSON Data, as you seen it have similar calling structure for Developer to feel familiar but with full advance automation,
+
+* No need of Extra header calls
+* No Need of Priority setup 
+* No Need of Retry Policy Calls
+
+* **JSONObject Request**
+```
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.Method.POST, url,
+               @Nullable body, new VolleyResponse.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+            }
+        }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
+            }
+        });
+        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonObjectRequest);  
+        
+// for Get Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url,
+             new VolleyResponse.Listener<JSONObject>() {....
+
+```
+* **JSONArray Request**
+```
+VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(Request.Method.POST, url,
+               @Nullable body, new VolleyResponse.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+            }
+        }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
+            }
+        });
+        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonArrayRequest);    
+
+// for Get Request
+VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url,
+             new VolleyResponse.Listener<JSONArray>() {....
+
+```
+
+* **String Request**
+
+```
+VolleyStringRequest volleyStringRequest = new VolleyStringRequest(Request.Method.POST, url,
+               @Nullable body, new VolleyResponse.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+            }
+        }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
+            }
+        });
+        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyStringRequest);    
+```
+
+* **Network Response Request**
+```
+ VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Method.POST, URL,
+                @Nullable body, new VolleyResponse.Listener<Integer>() {
+            @Override
+            public void onResponse(Integer response) {
+                if (VolleyNeeds.getInstance().checkResponseCode(response)) {
+                    // for response between 200 to 300
+                } else {
+                    MySnackBar.showSnackBarForMessage(ActivityProfileChange.this, R.string.connection_something_went_wrong);
+                }
+            }
+        }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+            }
+        });
+        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyNetworkRequest);
+```
+
+* **Response Request**
+```
+VolleyResponseRequests volleyStringRequest = new VolleyResponseRequests(Request.Method.POST, url,
+               @Nullable body, new VolleyResponse.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+            }
+        },new VolleyResponse.Listener<Integer>() {
+            @Override
+            public void onResponse(Integer response) {
+                if (VolleyNeeds.getInstance().checkResponseCode(response)) {
+                    // for response between 200 to 300
+                } else {
+                    MySnackBar.showSnackBarForMessage(ActivityProfileChange.this, R.string.connection_something_went_wrong);
+                }
+            }
+        }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
+            }
+        });
+        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyStringRequest);    
+```
+
+* **Multipart File Uploading Request**
+```
+// Setup calls for setting file for Uploadind
+Map<String, ModelByPart> params = new HashMap<>();
+
+// params.put(TAG,new ModelByPart(FileName,fileDataFromBitmap,"image/"+ext.));
+params.put(API_TAG, new ModelByPart(file.getName(),    VolleyHelper.getFileDataFromBitmap(BitmapFactory.decodeFile(mCurrentPhotoPath.getAbsolutePath())),
+                        "image/" + file.getName().substring(file.getName().lastIndexOf(".") + 1).toLowerCase()));
+                        
+VolleyMultipartRequest multipartRequest = new VolleyMultipartRequest(URL, params,
+     new VolleyResponse.Listener<String>() {
+         @Override
+         public void onResponse(String response) {
+                    
+    }, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                utilityClass.closeProgressDialog();
+                MySnackBar.showSnackBarForMessage(ActivityProfileChange.this, statusCode, errorMessage);
+            }
+        });
+VolleyNeeds.getInstance().setVolleyExtraCalls(multipartRequest);
+   
+```
+
+* **Last Call to setup Request for Execution is By**
+
+```
+        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonObjectRequestSetAvatar);    
+```
+
 
 # Dependency
 
