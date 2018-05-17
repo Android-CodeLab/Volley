@@ -34,6 +34,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 # How to Implement
 
+Once the project has been added to gradle, You can use these lines of code to configure pickers...
+
 # Dependency
 
 * Android Volley ``v1.1.0``
@@ -43,6 +45,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 Desgin & Developed by : **[Jatin Sahgal](https://www.linkedin.com/in/jatinsahgal/)**
  (**[Linkedin](https://www.linkedin.com/in/jatinsahgal/)** & **[Website](https://jatin.techcruzers.com)**) 
+
+Content Writer : **[Achal Garg](https://www.linkedin.com/in/techgarg/)**
+ (**[Linkedin](https://www.linkedin.com/in/techachal/)** & **[Website](https://achal.techcruzers.com)**) 
+
+Company : **[Techcruzers](https://www.techcruzers.com)**
 
 # Live Project using this Library
 
