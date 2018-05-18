@@ -18,9 +18,24 @@ A set of Custom Classes with UI components for network programming, integration 
 * Easy Calling Mechanism with **Instant reply** via Listeners and Return Functions
 * **Lite version** for minimal code calls with maximum Auto APIs Calling features
 * Need less calls with many customs methods to reach maximum developer satisfaction.
-* Already tested with Live apps
+
+### Quality Measures? for (0.0.1)
+
+The following apps are using this library without facing any kind of Bugs.
+
+* **[SimplyBlood](https://play.google.com/store/apps/details?id=com.simplyblood)**
+* **[ZINI](https://play.google.com/store/apps/details?id=ai.zini)**,
+* **[USEonRENT](https://play.google.com/store/apps/details?id=ai.zini)** 
+* **[Jumboo](https://play.google.com/store/apps/details?id=ai.jumboo)**
+* **[USEonRENT](https://play.google.com/store/apps/details?id=com.useonrent)**
+* **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=ai.scanners)** 
+* **[Wall-E](https://play.google.com/store/apps/details?id=ai.hdwallpapers)**
+* **[SaveBloodIndia](https://play.google.com/store/apps/details?id=com.savebloodindia)**
+* **[Rectangle India](https://play.google.com/store/apps/details?id=com.rectangleindia.blooddonation)**
+* **[Jeevan Rakshak](https://play.google.com/store/apps/details?id=com.jeevanrakshak)**
 
 ------
+
 ## Gradle Configuration
 
 **Add the dependency**
@@ -263,13 +278,109 @@ VolleyMultipartRequest multipartRequest = new VolleyMultipartRequest(URL, params
 VolleyNeeds.getInstance().setVolleyExtraCalls(multipartRequest);
    
 ```
-
 * **Last Call to setup Request for Execution is By**
 
 ```
         VolleyNeeds.getInstance().setVolleyExtraCalls(jsonObjectRequestSetAvatar);    
 ```
 
+* **Volley in Background Service**
+
+Jamun Volley Background Services provide you a better and efficent approach to Upload or Download data payloads in background tasks.
+It will help developers to maintain session during payload uploading and downloading. This will return result after complete execution, so no need to maintain another threads for waiting response.
+
+There are different types to use **Jamun-Volley** in Background Tasks :-
+
+1. **Get Request**
+
+```
+String response = VolleyBackgroundServices.getInstance().volleyToGetData(URL, new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                //Error Response
+            }
+        });
+```
+2. **Post Request**
+
+```
+String response = VolleyBackgroundServices.getInstance().volleyToSendData(URL, payload,new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                //Error Response
+            }
+        });
+```
+3. **Get Post Request**
+
+```
+//integer Methods are Request.Method.POST,Request.Method.GET,Request.Method.DELETE,Request.Method.UPDATE
+String response = VolleyBackgroundServices.getInstance().volleyToGetPostData(Method,URL, payload,new VolleyResponse.ErrorListener() {
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                //Error Response
+            }
+        });
+```
+4. **Upload File**
+
+```
+//Methods are Request.Method.POST,Request.Method.GET,Request.Method.DELETE,Request.Method.UPDATE
+// Tag name used for uploading file with API tag
+String response = VolleyBackgroundServices.getInstance().volleyToSendFile(File, Method, URL, tagName,new VolleyResponse.ErrorListener(){
+            @Override
+            public void onErrorResponse(int statusCode, String errorMessage) {
+                //Error Response
+            }
+        });
+```
+5. **Close In-Between**
+
+Using this method, help you stoping APIs call in between;
+
+```
+VolleyBackgroundServices.getInstance().stopServices();
+```
+* **HTTPConnection Request for Payload with Notifcaion**
+
+1. **Uploading File**
+```
+    /**
+     * Method helps you uploading heavy files with HttpURLConnection request. Method required AsyncTasks or Service to handle uploading;
+     * Otherwise thrown NetworkOnMainThreadException
+     * @param url Request URL for Upload payload
+     * @param sourceFile Source file need to be Upload
+     * @param helperNotification HelperNotification class for Notified user by Progress Notification
+     * @param notificationId Unique id for Progress Notification
+     * @return APIs response
+     */
+String response = VolleyDownUpFiles.getInstance().uploadFile(URL, SourceFile, HelperNotification, notificationId);
+```
+2. **Downloading File**
+```
+    /**
+     * Method helps you downloading heavy files with HttpURLConnection request. Method required AsyncTasks or Service to handle uploading;
+     * Otherwise thrown NetworkOnMainThreadException
+     * @param requestUrl Request URL for Upload payload
+     * @param filePath Download file need to be Saved
+     * @param helperNotification HelperNotification class for Notified user by Progress Notification
+     * @param notificationId Unique id for Progress Notification
+     * @return APIs response
+     */
+String response = VolleyDownUpFiles.getInstance().downloadFile(URL, filePath, HelperNotification, notificationId);
+```
+3. **Stop Service**
+```
+VolleyDownUpFiles.getInstance().stop();
+```
+4. **Customize Buffer Size**
+
+Different file have differnt size in Uploading, this required volley to create a buffer to maintain file in Uploading Tasks;
+Need to be set according to mean of the Files Size to stop MemoryBufferSizeException;
+
+```
+VolleyDownUpFiles.getInstance().stop();
+```
 
 # Dependency
 
