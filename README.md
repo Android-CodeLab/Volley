@@ -21,6 +21,27 @@ A set of Custom Classes with UI components for network programming, integration 
 * Already tested with Live apps
 
 ------
+## Gradle Configuration
+
+**Add the dependency**
+
+```java
+dependencies {
+        compile 'tk.jamun:volley:0.0.1'
+}
+```
+
+## Maven Config
+
+```xml
+<dependency>
+  <groupId>tk.jamun</groupId>
+  <artifactId>volley</artifactId>
+  <version>0.0.1</version>
+  <type>aar</type>
+</dependency>
+```
+------
 
 ### Features and Functionalities
 
