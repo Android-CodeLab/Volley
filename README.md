@@ -430,6 +430,11 @@ library provide you Custom Complete Camera view with full features like Flash, R
 * **[Gallery](https://github.com/Lib-Jamun/ui.git)**
 have some Beautiful UI Components and Multi files Mode for android Developers to give there app a A Rich look With single and Multi picker Functionality.
 
+* **[Elements](https://github.com/Lib-Jamun/elements.git)**
+Library provide you a custom set of Android Elements that have custom views and properties like CircularImageView or CircularNetworkImageView and many more.
+
+* **[Browser](https://github.com/Lib-Jamun/Browser.git)**
+Library provide you two type Single Pager and Multi Pager In-APP Browser Functionality with Event Handling and Functions to Customize Views. It also provide you Copy to clipboard, Open in Browser and share link feature in-Bulit.
 
 ## License
     Copyright (c) 2018 Jatin Sahgal
