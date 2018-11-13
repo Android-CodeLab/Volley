@@ -12,14 +12,14 @@ A set of Custom Classes with UI components for network programming, integration 
 * Library's most attractives UI Feature is that you are provided with CircularNetworkImageView with the help of which you can display your image in Attractive Circullar View. By Just using CircularNetworkImageView.
 * Library also provide you a UI Component to Show progress Data Statistics in Notification. But this also provide you a set of Function which help in Customization.<br>
 
-### What's New? (0.0.1)
+### What's New? (0.0.4)
 * Stable **Official Version** for Developers and Live Apps.
 * Custom UI components for **Progress Notifications** with Infinite and Counted progress bar. Also have data analytics.
 * Easy Calling Mechanism with **Instant reply** via Listeners and Return Functions
 * **Lite version** for minimal code calls with maximum Auto APIs Calling features
 * Need less calls with many customs methods to reach maximum developer satisfaction.
 
-### Quality Measures? for (0.0.1)
+### Quality Measures? for (0.0.4)
 
 The following apps are using this library without facing any kind of Bugs.
 
@@ -42,7 +42,7 @@ The following apps are using this library without facing any kind of Bugs.
 
 ```java
 dependencies {
-        compile 'tk.jamun:volley:0.0.1'
+        compile 'tk.jamun:volley:0.0.4'
 }
 ```
 
@@ -52,7 +52,7 @@ dependencies {
 <dependency>
   <groupId>tk.jamun</groupId>
   <artifactId>volley</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.4</version>
   <type>aar</type>
 </dependency>
 ```
