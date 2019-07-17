@@ -1,38 +1,42 @@
-# Jamun-Volley
+# Jamun-Volley (Advance Volley)
 
 A set of Custom Classes with UI components for network programming, integration and transaction handling in a better and standard way. This will help developers for making quality use of volley library.
 
+Updates
+
+
 ### Introduction
 
-* In this Library Jamun-Volley, we provide you a package of custom Volley Classes which ease your work while working with API calls.
-* You just need to setup all the configuration stuff (Like Header Meta-Data, Singleton Declarations this will be shown with example later in the documnet) at one place so that you don't have to write same piece of code again and again. For example, MyApplication Class.<br>
-* Jamun-Volley library has been developed keeping many parameters in mind by default the library support many auto-configuration like LUR-Cache, Request and ImageLoader Objects. But in case if you need To Edit Something We have also provided you to edit Definations and setting up new configuration parameters.<br>
-* One of the main benifit of using Jamun-Volley LIbrary is that you can Post Any type of data and Retrive response in another format which wasn't possible in traditional Volley Library.<br>
-* THis Library also provide you File Downloading and Uploading classes which were upsent in Traditional Volley. With the help of this Library you can also manage of your file Downloading/Uploading progress easliy with Data Statistics.<br>
-* Library's most attractives UI Feature is that you are provided with CircularNetworkImageView with the help of which you can display your image in Attractive Circullar View. By Just using CircularNetworkImageView.
-* Library also provide you a UI Component to Show progress Data Statistics in Notification. But this also provide you a set of Function which help in Customization.<br>
+* 
 
-### What's New? (0.0.4)
-* Stable **Official Version** for Developers and Live Apps.
-* Custom UI components for **Progress Notifications** with Infinite and Counted progress bar. Also have data analytics.
-* Easy Calling Mechanism with **Instant reply** via Listeners and Return Functions
+### What's New? (0.0.7)
+* No more **BoilerCodes** Write Small and Easy Understandable Code,
+* No need to **Write Header** Everywhere, just See the Implementation of writing setup on MyApplication Class,
+* No need of **JSON Parsing** Using POJO, Volley is now available with **Auto Parsing JSON**
+* Defined Error Controllers and Listener with Pre Defined **Messages & Network Status Code**
+* **Image Uploading** Framework using Volley Customs
+* **Image Compressing** Helper Classes Before Uploading Images with Custom Parameters
+* **VolleyResponses** Listener Which provide Desired Result on Both Demanding **POJO CLass and String** with Different Error Listeners as well as you have Default Listeners to Use.
+* Available with Uploading & Downloading Notification Handler
+* No Need to Write Hasmap or JSONObject() before Put/POST, just include your POJO file and Get Desired Result
 * **Lite version** for minimal code calls with maximum Auto APIs Calling features
-* Need less calls with many customs methods to reach maximum developer satisfaction.
+* Easy Calling Mechanism with **Instant reply** via Listeners and Return Functions
+* Customize LCache and Volley Retry Policies with single place implementations.
+* Available with Androidx & Kotlin Support with Latest Google Volley 1.1.1 Update.
 
-### Quality Measures? for (0.0.4)
+### Quality Measures? for (0.0.7)
 
 The following apps are using this library without facing any kind of Bugs.
 
 * **[SimplyBlood](https://play.google.com/store/apps/details?id=com.simplyblood)**
 * **[ZINI](https://play.google.com/store/apps/details?id=ai.zini)**,
-* **[USEonRENT](https://play.google.com/store/apps/details?id=ai.zini)** 
-* **[Jumboo](https://play.google.com/store/apps/details?id=ai.jumboo)**
-* **[USEonRENT](https://play.google.com/store/apps/details?id=com.useonrent)**
+* **[RentalBazar](https://play.google.com/store/apps/details?id=com.rentalbazaar)** 
+* **[DoubtCrusher](https://play.google.com/store/apps/details?id=com.doubtcrusher)**
+* **[BookAGround](https://play.google.com/store/apps/details?id=com.bookaground)**
+* **[PayFree](https://play.google.com/store/apps/details?id=com.payfree)**
+* **[ClueRace](https://play.google.com/store/apps/details?id=com.cluerace)**
 * **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=ai.scanners)** 
 * **[Wall-E](https://play.google.com/store/apps/details?id=ai.hdwallpapers)**
-* **[SaveBloodIndia](https://play.google.com/store/apps/details?id=com.savebloodindia)**
-* **[Rectangle India](https://play.google.com/store/apps/details?id=com.rectangleindia.blooddonation)**
-* **[Jeevan Rakshak](https://play.google.com/store/apps/details?id=com.jeevanrakshak)**
 
 ------
 
@@ -42,7 +46,7 @@ The following apps are using this library without facing any kind of Bugs.
 
 ```java
 dependencies {
-        compile 'tk.jamun:volley:0.0.4'
+        compile 'tk.jamun:volley:0.0.7'
 }
 ```
 
@@ -52,7 +56,7 @@ dependencies {
 <dependency>
   <groupId>tk.jamun</groupId>
   <artifactId>volley</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.7</version>
   <type>aar</type>
 </dependency>
 ```
@@ -69,7 +73,8 @@ As you all familiar with Basic calls Required in Accessing JSON Data of Type,
 But this Library Provide you :
 
 * **Network Response Request**
-* **Response Request with Response in String and Network**
+* **Image Loader equest**
+
 
 **Uploading**
 
@@ -96,6 +101,7 @@ Last but not Lease :
 
 * **With Status Code**
 * **With Predefined Status Replies**
+* **With Volley Error Class**
 
 ------
 
@@ -119,11 +125,13 @@ But here, these things are automate by calling some methods in **Application** c
  }
  // this function call required to setup or refresh your Header AuTH details from one place for whole further api calls.
  public void setAndRefreshVolleyHeaderCredentials() {
-        VolleyNeeds.getInstance().setUpHeaders(ClassSharedPreference.getInstance().getHeaderCredentials());
+        VolleyNeeds.getInstance().setUpHeaders(ClassSharedPreference.getHeaderCredentials());
  }
  
  //If you want to setup LRU cache Size
- VolleySingleton.setLruCacheSize(int lruCacher);
+ VolleySingleton.get().setLruCacheSize(int lruCacher);
+ VolleyValues.get().setImageCompressionType(Bitmap.CompressFormat.JPEG)
+ VolleyValues.get().setImageCompressionValue(100) -> 0 to 100(Full Quality)
  
 ```
 
@@ -135,8 +143,6 @@ public ArrayList<ModelHeader> getHeaderCredentials() {
     ArrayList<ModelHeader> headerArrayList = new ArrayList<>();
     headerArrayList.add(new ModelHeader(KEY_USER_ID, sharedPreferences.getString(KEY_USER_ID, null)));
     headerArrayList.add(new ModelHeader(KEY_TOKEN, sharedPreferences.getString(KEY_TOKEN, null)));
-    headerArrayList.add(new ModelHeader(TAG,DATA));
-    headerArrayList.add(new ModelHeader(TAG,DATA));
     headerArrayList.add(new ModelHeader(TAG,DATA));
     return headerArrayList;
 }
@@ -153,6 +159,97 @@ As you all familiar with Basic calls Required in Accessing JSON Data, as you see
 
 * **JSONObject Request**
 ```
+Advance POJO Implementation
+class Model{
+   @SerializeName("first_name")
+   String firstName;
+   @SerializeName("last_name")
+   String lastName;
+   @SerializeName("gender")
+   int gender;
+   @SerializeName("date_of_birth")
+   String dob;
+   //Getter Setter
+}
+
+//Get Request Implementatino
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, Model.class, new VolleyResponse(){
+       //Implement For Response (Model Class)
+       @override void onResponse(Object response) {
+                super.onResponse(response)
+                if(response instanceOf Model){
+                  Model model = (Model) response
+                }
+       }    
+       //Implement For Response (Model) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)         
+       }    
+       //Implement for Error Response in all kind
+       @override void onErrorResponse(VolleyError error, int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement for Error on Status Code and Error
+       @override void onErrorResponse(int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement For Volley Error class on Errror
+       @override void onErrorResponse(VolleyError error) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+}); 
+VolleyNeeds.get().addCalls(jsonObjectRequest);  
+
+//Post Implementation
+Model model= new Model();
+model.setFirstName("Jatin");
+model.setLastName("Sahgal");
+model.setGender(1);//1-Male, 2-Female
+model.setDob("16/12/1995");
+
+//Post Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, model, VolleyGson.get().getTypeToken(new TypeToken<Model>(){}),
+    new VolleyResponse(){
+       //Implement For Response (JSONOBject) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)
+                if(response instanceOf JSONobject){
+                }                
+       }
+});
+VolleyNeeds.get().addCalls(jsonObjectRequest);  
+
+//Get + Post Request Using
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, model, VolleyGson.get().getTypeToken(new TypeToken<Model>(){}),
+    new VolleyResponse(){});
+
+JSONObject stringBody = new JSONObject()
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url,Model.class, stringBody.toString(),
+    new VolleyResponse(){});
+
+
+// For Post Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, stringBody, new VolleyResponse(){});
+
+// For Delete Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.Method.DELET, url, new VolleyResponse(){});
+
+// For Other Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.Method.PUT,url, stringBody, new VolleyResponse(){});
+
+//Post Request
+VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, model, VolleyGson.get().getTypeToken(new TypeToken<Model>(){}),
+    new VolleyResponse(){
+       //Implement For Response (JSONOBject) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)
+                if(response instanceOf JSONobject){
+                }                
+       }
+});
+VolleyNeeds.get().addCalls(jsonObjectRequest);  
+
+//Old Implementation 
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.Method.POST, url,
                @Nullable body, new VolleyResponse.Listener<JSONObject>() {
             @Override
@@ -164,7 +261,7 @@ VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.
                 MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
             }
         });
-        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonObjectRequest);  
+        VolleyNeeds.get().addCalls(jsonObjectRequest);          
         
 // for Get Request
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url,
@@ -173,24 +270,54 @@ VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url,
 ```
 * **JSONArray Request**
 ```
-VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(Request.Method.POST, url,
-               @Nullable body, new VolleyResponse.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-            }
-        }, new VolleyResponse.ErrorListener() {
-            @Override
-            public void onErrorResponse(int statusCode, String errorMessage) {
-                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
-            }
-        });
-        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonArrayRequest);    
 
-// for Get Request
-VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url,
-             new VolleyResponse.Listener<JSONArray>() {....
+//Get Request Implementatino
+VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url, Model[].class, new VolleyResponse(){
+       //Implement For Response (Model Array Class)
+       @override void onResponse(Object response) {
+                super.onResponse(response)
+                Model[] model = (Model[]) response
+       }    
+       //Implement For Response (Model Array Class) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)         
+       }    
+       //Implement for Error Response in all kind
+       @override void onErrorResponse(VolleyError error, int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement for Error on Status Code and Error
+       @override void onErrorResponse(int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement For Volley Error class on Errror
+       @override void onErrorResponse(VolleyError error) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+}); 
+VolleyNeeds.get().addCalls(jsonArrayRequest);  
+
+//Post Request (Model[] in response or Type Token)
+Model[] models= new Model[4];
+VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url, models, VolleyGson.get().getTypeToken(new TypeToken<Model[]>(){}),
+    new VolleyResponse(){
+       //Implement For Response (Model Array Class) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)
+                if(response instanceOf JSONobject){
+                       Model[] model = (Model[]) response
+         }                
+       }
+});
+VolleyNeeds.get().addCalls(jsonArrayRequest);  
+
+//Old Implementation 
+VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(Request.Method.POST, url,
+               @Nullable body, new VolleyResponse.Listener<JSONArray>() {});
+        VolleyNeeds.get().addCalls(jsonArrayRequest);    
 
 ```
+
 
 * **String Request**
 
@@ -206,12 +333,35 @@ VolleyStringRequest volleyStringRequest = new VolleyStringRequest(Request.Method
                 MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
             }
         });
-        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyStringRequest);    
+        VolleyNeeds.get().addCalls(volleyStringRequest);    
 ```
 
 * **Network Response Request**
 ```
- VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Method.POST, URL,
+ //Post Request (Model[] in response or Type Token)
+Model[] models= new Model[4];
+VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Method.POST, URL, models, VolleyGson.get().getTypeToken(new TypeToken<Model[]>(){}),
+    new VolleyResponse(){
+       //Implement For Response (Model Array Class) with String
+       @override void onStatusCodeResponse(Integer statusCode) {
+                super.onStatusCodeResponse(statusCode)
+       }
+       //Implement for Error Response in all kind
+       @override void onErrorResponse(VolleyError error, int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement for Error on Status Code and Error
+       @override void onErrorResponse(int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+       //Implement For Volley Error class on Errror
+       @override void onErrorResponse(VolleyError error) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }        
+});
+VolleyNeeds.get().addCalls(jsonArrayRequest); 
+
+VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Method.POST, URL,
                 @Nullable body, new VolleyResponse.Listener<Integer>() {
             @Override
             public void onResponse(Integer response) {
@@ -226,33 +376,9 @@ VolleyStringRequest volleyStringRequest = new VolleyStringRequest(Request.Method
             public void onErrorResponse(int statusCode, String errorMessage) {
             }
         });
-        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyNetworkRequest);
+        VolleyNeeds.get().addCalls(volleyNetworkRequest);
 ```
 
-* **Response Request**
-```
-VolleyResponseRequests volleyStringRequest = new VolleyResponseRequests(Request.Method.POST, url,
-               @Nullable body, new VolleyResponse.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-            }
-        },new VolleyResponse.Listener<Integer>() {
-            @Override
-            public void onResponse(Integer response) {
-                if (VolleyNeeds.getInstance().checkResponseCode(response)) {
-                    // for response between 200 to 300
-                } else {
-                    MySnackBar.showSnackBarForMessage(ActivityProfileChange.this, R.string.connection_something_went_wrong);
-                }
-            }
-        }, new VolleyResponse.ErrorListener() {
-            @Override
-            public void onErrorResponse(int statusCode, String errorMessage) {
-                MySnackBar.showSnackBarForMessage(activity, statusCode, errorMessage);
-            }
-        });
-        VolleyNeeds.getInstance().setVolleyExtraCalls(volleyStringRequest);    
-```
 
 * **Multipart File Uploading Request**
 ```
@@ -261,27 +387,25 @@ Map<String, ModelByPart> params = new HashMap<>();
 
 // params.put(TAG,new ModelByPart(FileName,fileDataFromBitmap,"image/"+ext.));
 params.put(API_TAG, new ModelByPart(file.getName(),    VolleyHelper.getFileDataFromBitmap(BitmapFactory.decodeFile(mCurrentPhotoPath.getAbsolutePath())),
-                        "image/" + file.getName().substring(file.getName().lastIndexOf(".") + 1).toLowerCase()));
+                  MimeTypeMap.getFileExtensionFromUrl(file.getAbsolutePath()));
                         
 VolleyMultipartRequest multipartRequest = new VolleyMultipartRequest(URL, params,
-     new VolleyResponse.Listener<String>() {
-         @Override
-         public void onResponse(String response) {
-                    
-    }, new VolleyResponse.ErrorListener() {
-            @Override
-            public void onErrorResponse(int statusCode, String errorMessage) {
-                utilityClass.closeProgressDialog();
-                MySnackBar.showSnackBarForMessage(ActivityProfileChange.this, statusCode, errorMessage);
-            }
-        });
-VolleyNeeds.getInstance().setVolleyExtraCalls(multipartRequest);
+     //Implement For Response (Model Array Class) with String
+       @override void onResponse(Object response, String responseBody) {
+                super.onResponse(response, data)         
+       }                
+   //Use this only Implement for Error Response in Image Uploading
+       @override void onErrorResponse(VolleyError error, int statusCode, String errorMessage) {
+                super.onErrorResponse(error, statusCode, errorMessage)
+       }
+   });
+VolleyNeeds.get().addCalls(multipartRequest);
    
 ```
 * **Last Call to setup Request for Execution is By**
 
 ```
-        VolleyNeeds.getInstance().setVolleyExtraCalls(jsonObjectRequestSetAvatar);    
+        VolleyNeeds.get().addCalls(volleyJsonObjects);    
 ```
 
 * **Volley in Background Service**
@@ -384,26 +508,13 @@ VolleyDownUpFiles.getInstance().stop();
 
 # Dependency
 
-* Android Volley ``v1.1.0``
-* Java jar ``org.apache.http.legacy.jar``
+* Android Volley ``v1.1.1``
+* GSON Lib
 
 ## Credits
 
 Desgin & Developed by : **[Jatin Sahgal](https://www.linkedin.com/in/jatinsahgal/)**
  (**[Linkedin](https://www.linkedin.com/in/jatinsahgal/)** & **[Website](https://blog.jamun.tk)**) 
-
-# Live Project using this Library
-
-The following apps are using this library without facing any kind of Bugs.
-
-* **[SimplyBlood](https://play.google.com/store/apps/details?id=com.simplyblood)**
-* **[ZINI](https://play.google.com/store/apps/details?id=ai.zini)**
-* **[LifeMantra](https://play.google.com/store/apps/details?id=com.lifemantra)**
-* **[Wall-E](https://play.google.com/store/apps/details?id=ai.hd.wallpaper)**
-* **[Jumboo](https://play.google.com/store/apps/details?id=com.doubtzone)**
-* **[SaveBloodIndia](https://play.google.com/store/apps/details?id=com.savebloodindia)**
-* **[Rectangle India](https://play.google.com/store/apps/details?id=com.rectangleindia.blooddonation)**
-* **[Jeevan Rakshak](https://play.google.com/store/apps/details?id=com.jeevanrakshak)**
 
 ## More Library under Jamun 
 * **[Pickers](https://github.com/Lib-Jamun/Pickers.git)**
@@ -424,10 +535,10 @@ is a collection of Beautiful Activities which help others to make there Fully Cu
 * **[UI](https://github.com/Lib-Jamun/ui.git)**
 library is a set of UI Views, Custom Component and Collection of Helper Classes which help Developer for making quality Product. Such as Camera, Gallery, Number of Pickers, Calendar, Date Pickers, Dialogs and many more Heler UI and Backend Component.
 
-* **[Camera](https://github.com/Lib-Jamun/ui.git)**
+* **[Camera](https://github.com/Lib-Jamun/camera.git)**
 library provide you Custom Complete Camera view with full features like Flash, Rotation, Gallery Picker, Focus, Tap to capture, Confirmation window and last but not least croping feature. It also provide you file path in return so that developer can feel a friendly handy way to Deal After. 
 
-* **[Gallery](https://github.com/Lib-Jamun/ui.git)**
+* **[Gallery](https://github.com/Lib-Jamun/gallery.git)**
 have some Beautiful UI Components and Multi files Mode for android Developers to give there app a A Rich look With single and Multi picker Functionality.
 
 * **[Elements](https://github.com/Lib-Jamun/elements.git)**
