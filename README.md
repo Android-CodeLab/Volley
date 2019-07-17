@@ -2,13 +2,6 @@
 
 A set of Custom Classes with UI components for network programming, integration and transaction handling in a better and standard way. This will help developers for making quality use of volley library.
 
-Updates
-
-
-### Introduction
-
-* 
-
 ### What's New? (0.0.7)
 * No more **BoilerCodes** Write Small and Easy Understandable Code,
 * No need to **Write Header** Everywhere, just See the Implementation of writing setup on MyApplication Class,
