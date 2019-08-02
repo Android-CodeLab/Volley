@@ -164,7 +164,9 @@ class Model{
    String dob;
    //Getter Setter
 }
+```
 
+```
 //Get Request Implementatino
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, Model.class, new VolleyResponse(){
        //Implement For Response (Model Class)
@@ -192,7 +194,9 @@ VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, Mod
        }
 }); 
 VolleyNeeds.get().addCalls(jsonObjectRequest);  
+```
 
+```
 //Post Implementation
 Model model= new Model();
 model.setFirstName("Jatin");
@@ -211,7 +215,9 @@ VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, mod
        }
 });
 VolleyNeeds.get().addCalls(jsonObjectRequest);  
+```
 
+```
 //Get + Post Request Using
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, model, VolleyGson.get().getTypeToken(new TypeToken<Model>(){}),
     new VolleyResponse(){});
@@ -229,7 +235,9 @@ VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.
 
 // For Other Request
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(Request.Method.PUT,url, stringBody, new VolleyResponse(){});
+```
 
+```
 //Post Request
 VolleyJsonObjectRequest jsonObjectRequest = new VolleyJsonObjectRequest(url, model, VolleyGson.get().getTypeToken(new TypeToken<Model>(){}),
     new VolleyResponse(){
@@ -289,7 +297,9 @@ VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url, Model[
        }
 }); 
 VolleyNeeds.get().addCalls(jsonArrayRequest);  
+```
 
+```
 //Post Request (Model[] in response or Type Token)
 Model[] models= new Model[4];
 VolleyJsonArrayRequest jsonArrayRequest = new VolleyJsonArrayRequest(url, models, VolleyGson.get().getTypeToken(new TypeToken<Model[]>(){}),
@@ -353,7 +363,9 @@ VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Met
        }        
 });
 VolleyNeeds.get().addCalls(jsonArrayRequest); 
+```
 
+```
 VolleyNetworkRequest volleyNetworkRequest = new VolleyNetworkRequest(Request.Method.POST, URL,
                 @Nullable body, new VolleyResponse.Listener<Integer>() {
             @Override
