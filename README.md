@@ -26,10 +26,10 @@ The following apps are using this library without facing any kind of Bugs.
 * **[RentalBazar](https://play.google.com/store/apps/details?id=com.rentalbazaar)** 
 * **[DoubtCrusher](https://play.google.com/store/apps/details?id=com.doubtcrusher)**
 * **[BookAGround](https://play.google.com/store/apps/details?id=com.bookaground)**
-* **[PayFree](https://play.google.com/store/apps/details?id=com.payfree)**
+* **[PeyFree](https://play.google.com/store/apps/details?id=com.peyfree)**
 * **[ClueRace](https://play.google.com/store/apps/details?id=com.cluerace)**
-* **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=ai.scanners)** 
-* **[Wall-E](https://play.google.com/store/apps/details?id=ai.hdwallpapers)**
+* **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=com.scanner.qrbarcode)** 
+* **[Wall-E](https://play.google.com/store/apps/details?id=com.walle.android)**
 
 ------
 
