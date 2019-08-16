@@ -2,7 +2,7 @@
 
 A set of Custom Classes with UI components for network programming, integration and transaction handling in a better and standard way. This will help developers for making quality use of volley library.
 
-### What's New? (0.0.7)
+### What's New? {Latest Version}
 * No more **BoilerCodes** Write Small and Easy Understandable Code,
 * No need to **Write Header** Everywhere, just See the Implementation of writing setup on MyApplication Class,
 * No need of **JSON Parsing** Using POJO, Volley is now available with **Auto Parsing JSON**
@@ -17,7 +17,7 @@ A set of Custom Classes with UI components for network programming, integration 
 * Customize LCache and Volley Retry Policies with single place implementations.
 * Available with Androidx & Kotlin Support with Latest Google Volley 1.1.1 Update.
 
-### Quality Measures? for (0.0.7)
+### Quality Measures? for {Latest Version}
 
 The following apps are using this library without facing any kind of Bugs.
 
@@ -37,9 +37,22 @@ The following apps are using this library without facing any kind of Bugs.
 
 **Add the dependency**
 
-```java
+```
+Latest Version : 0.0.8
+
+Android
 dependencies {
-        compile 'tk.jamun:volley:0.0.7'
+     compile 'tk.jamun:volley:{Latest Version}'
+}
+
+AndroidX
+dependencies {
+     compile 'tk.jamunx:volley:{Latest Version}'
+}
+
+Kotlin
+dependencies {
+     compile 'tk.jamun-ktx:volley:{Latest Version}'
 }
 ```
 
@@ -47,9 +60,14 @@ dependencies {
 
 ```xml
 <dependency>
-  <groupId>tk.jamun</groupId>
+Android
+  <groupId>tk.jamun.ui</groupId>
+AndroidX
+  <groupId>tk.jamunx.ui</groupId>
+Kotlin
+  <groupId>tk.jamun-ktx.ui</groupId>
   <artifactId>volley</artifactId>
-  <version>0.0.7</version>
+  <version>{Latest Version}</version>
   <type>aar</type>
 </dependency>
 ```
