@@ -28,7 +28,7 @@ The following apps are using this library without facing any kind of Bugs.
 * **[BookAGround](https://play.google.com/store/apps/details?id=com.bookaground)**
 * **[PeyFree](https://play.google.com/store/apps/details?id=com.peyfree)**
 * **[ClueRace](https://play.google.com/store/apps/details?id=com.cluerace)**
-* **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=com.scanner.qrbarcode)** 
+* **[QR/Barcode Scanner](https://play.google.com/store/apps/details?id=com.scanner.android)** 
 * **[Wall-E](https://play.google.com/store/apps/details?id=com.walle.android)**
 
 ------
