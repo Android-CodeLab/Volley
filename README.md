@@ -61,11 +61,11 @@ dependencies {
 ```xml
 <dependency>
 Android
-  <groupId>tk.jamun.ui</groupId>
+  <groupId>tk.jamun</groupId>
 AndroidX
-  <groupId>tk.jamunx.ui</groupId>
+  <groupId>tk.jamunx</groupId>
 Kotlin
-  <groupId>tk.jamun-ktx.ui</groupId>
+  <groupId>tk.jamun-ktx</groupId>
   <artifactId>volley</artifactId>
   <version>{Latest Version}</version>
   <type>aar</type>
